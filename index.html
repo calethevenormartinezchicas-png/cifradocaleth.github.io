@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIC - Escuela de Investigación Criminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1a29; /* Color de fondo oscuro */
+            color: #ffffff;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .hero-section {
+            background: url('uploaded:a1.jpg-6fdcd48b-dc45-4123-b559-5d0938e92f29') no-repeat center center / cover;
+            background-attachment: fixed; /* Efecto de paralaje */
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(30, 78, 119, 0.7); /* Capa azul semitransparente */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        .info-content {
+            background-color: #1a2a3a;
+            padding: 3rem 2rem;
+        }
+        .shadow-sm-card {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="p-0 m-0">
+    <div class="main-container">
+        <!-- Barra de Navegación Superior -->
+        <nav class="bg-[#1E4E77] text-white p-4 sticky top-0 z-50 shadow-lg">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fas fa-shield-alt text-2xl text-[#4A90E2]"></i>
+                    <span class="text-xl font-bold">EIC</span>
+                </a>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-8">
+                    <a href="#" class="hover:text-[#4A90E2] transition-colors nav-item-top" data-target="content-inicio">Inicio</a>
+                    <a href="#" class="hover:text-[#4A90E2] transition-colors nav-item-top" data-target="content-cursos">Cursos</a>
+                    <a href="#" class="hover:text-[#4A90E2] transition-colors nav-item-top" data-target="content-contacto">Contacto</a>
+                    <a href="#" class="hover:text-[#4A90E2] transition-colors nav-item-top" data-target="content-info">Info</a>
+                    <a href="#" class="hover:text-[#4A90E2] transition-colors nav-item-top" data-target="content-mapa">Ubicación</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sección Principal (Hero) -->
+        <header id="content-inicio" class="hero-section">
+            <div class="hero-content">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">Escuela de Investigación Criminal</h1>
+                <p class="text-xl md:text-2xl text-gray-200 font-medium mb-8 drop-shadow">Comayagua, Honduras</p>
+                <a href="#content-cursos" class="bg-[#4A90E2] hover:bg-[#3c78a9] transition-colors text-white font-bold py-3 px-8 rounded-full shadow-lg text-lg">
+                    Explorar Cursos
+                </a>
+            </div>
+        </header>
+
+        <!-- Contenido principal de la App -->
+        <main class="flex-grow">
+            <!-- Sección de cursos -->
+            <section id="content-cursos" class="info-content">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-10 text-center">Nuestros Cursos y Programas</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Curso de Criminalística y Ciencias Forenses -->
+                        <div class="bg-[#1E4E77] rounded-2xl p-6 shadow-sm-card">
+                            <h3 class="text-xl font-semibold text-white mb-2 flex items-center">
+                                <i class="fas fa-flask text-[#4A90E2] mr-3"></i> Criminalística y Ciencias Forenses
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed mb-4">
+                                Este programa te forma en el análisis científico de la evidencia física. Aprenderás a recolectar, preservar y analizar indicios biológicos, balísticos y documentales para la resolución de crímenes.
+                            </p>
+                            <div id="details-criminalistica" class="hidden">
+                                <h4 class="font-medium text-white mb-2 mt-4">Detalles del Programa:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                                    <li><strong>Módulo 1:</strong> Introducción a las Ciencias Forenses</li>
+                                    <li><strong>Módulo 2:</strong> Dactiloscopia y análisis de huellas</li>
+                                    <li><strong>Módulo 3:</strong> Balística Forense</li>
+                                    <li><strong>Módulo 4:</strong> ADN y biología molecular</li>
+                                    <li><strong>Módulo 5:</strong> Peritaje Documental y Grafoscopía</li>
+                                </ul>
+                            </div>
+                            <button class="toggle-btn w-full mt-4 py-2 px-4 rounded-full bg-[#3c78a9] text-white font-semibold hover:bg-[#2e6293] transition-colors">
+                                Ver más
+                            </button>
+                        </div>
+                        
+                        <!-- Nuevo Curso: Investigación Criminal Antigangas y Pandillas -->
+                        <div class="bg-[#1E4E77] rounded-2xl p-6 shadow-sm-card">
+                            <h3 class="text-xl font-semibold text-white mb-2 flex items-center">
+                                <i class="fas fa-users-slash text-[#4A90E2] mr-3"></i> Investigación Criminal Antigangas y Pandillas
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed mb-4">
+                                Este curso se enfoca en las estrategias y técnicas para combatir la actividad criminal de maras y pandillas. Aprenderás a desarticular redes criminales y a investigar sus estructuras.
+                            </p>
+                            <div id="details-antigangas" class="hidden">
+                                <h4 class="font-medium text-white mb-2 mt-4">Contenido del Programa:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                                    <li><strong>Módulo 1:</strong> Marco legal y operativo</li>
+                                    <li><strong>Módulo 2:</strong> Estructuras de las maras y pandillas</li>
+                                    <li><strong>Módulo 3:</strong> Técnicas de infiltración y recolección de inteligencia</li>
+                                    <li><strong>Módulo 4:</strong> Operaciones encubiertas</li>
+                                    <li><strong>Módulo 5:</strong> Cooperación interinstitucional</li>
+                                </ul>
+                            </div>
+                            <button class="toggle-btn w-full mt-4 py-2 px-4 rounded-full bg-[#3c78a9] text-white font-semibold hover:bg-[#2e6293] transition-colors">
+                                Ver más
+                            </button>
+                        </div>
+
+                        <!-- Nuevo Curso: Lucha contra el Crimen Organizado -->
+                        <div class="bg-[#1E4E77] rounded-2xl p-6 shadow-sm-card">
+                            <h3 class="text-xl font-semibold text-white mb-2 flex items-center">
+                                <i class="fas fa-sitemap text-[#4A90E2] mr-3"></i> Lucha contra el Crimen Organizado
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed mb-4">
+                                Este programa te prepara para enfrentar las complejas redes del crimen organizado, incluyendo narcotráfico, lavado de activos y trata de personas, a través de estrategias de inteligencia y operaciones conjuntas.
+                            </p>
+                            <div id="details-crimen-organizado" class="hidden">
+                                <h4 class="font-medium text-white mb-2 mt-4">Contenido del Programa:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                                    <li><strong>Módulo 1:</strong> Fundamentos del crimen organizado</li>
+                                    <li><strong>Módulo 2:</strong> Investigaciones financieras y lavado de activos</li>
+                                    <li><strong>Módulo 3:</strong> Redes de tráfico de drogas y personas</li>
+                                    <li><strong>Módulo 4:</strong> Inteligencia criminal y análisis de información</li>
+                                    <li><strong>Módulo 5:</strong> Cooperación internacional y extradición</li>
+                                </ul>
+                            </div>
+                            <button class="toggle-btn w-full mt-4 py-2 px-4 rounded-full bg-[#3c78a9] text-white font-semibold hover:bg-[#2e6293] transition-colors">
+                                Ver más
+                            </button>
+                        </div>
+                        
+                        <!-- Nuevo Curso: Direccionamiento Virtual de Unidades de Investigación Criminal -->
+                        <div class="bg-[#1E4E77] rounded-2xl p-6 shadow-sm-card">
+                            <h3 class="text-xl font-semibold text-white mb-2 flex items-center">
+                                <i class="fas fa-desktop text-[#4A90E2] mr-3"></i> Direccionamiento Virtual de Unidades de Investigación Criminal
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed mb-4">
+                                Este curso te capacita para dirigir y coordinar equipos de investigación a distancia, utilizando herramientas tecnológicas y plataformas digitales para optimizar la recolección y análisis de pruebas.
+                            </p>
+                            <div id="details-direccionamiento-virtual" class="hidden">
+                                <h4 class="font-medium text-white mb-2 mt-4">Contenido del Programa:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                                    <li><strong>Módulo 1:</strong> Liderazgo y gestión de equipos virtuales</li>
+                                    <li><strong>Módulo 2:</strong> Herramientas de comunicación segura</li>
+                                    <li><strong>Módulo 3:</strong> Recolección de evidencia digital</li>
+                                    <li><strong>Módulo 4:</strong> Ciberseguridad para investigadores</li>
+                                    <li><strong>Módulo 5:</strong> Casos de estudio en investigación virtual</li>
+                                </ul>
+                            </div>
+                            <button class="toggle-btn w-full mt-4 py-2 px-4 rounded-full bg-[#3c78a9] text-white font-semibold hover:bg-[#2e6293] transition-colors">
+                                Ver más
+                            </button>
+                        </div>
+
+                         <!-- Nuevo Curso: Ciberdelincuencia y Seguridad Informática -->
+                         <div class="bg-[#1E4E77] rounded-2xl p-6 shadow-sm-card">
+                            <h3 class="text-xl font-semibold text-white mb-2 flex items-center">
+                                <i class="fas fa-laptop-code text-[#4A90E2] mr-3"></i> Ciberdelincuencia y Seguridad Informática
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed mb-4">
+                                Este curso profundiza en la investigación de delitos cometidos a través de medios digitales. Aprenderás a rastrear, identificar y analizar actividades ilícitas en el ciberespacio.
+                            </p>
+                            <div id="details-ciberdelincuencia" class="hidden">
+                                <h4 class="font-medium text-white mb-2 mt-4">Contenido del Programa:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                                    <li><strong>Módulo 1:</strong> Fundamentos de la ciberdelincuencia</li>
+                                    <li><strong>Módulo 2:</strong> Ataques y amenazas comunes</li>
+                                    <li><strong>Módulo 3:</strong> Recolección de evidencia digital en la nube</li>
+                                    <li><strong>Módulo 4:</strong> Protección de datos y privacidad</li>
+                                    <li><strong>Módulo 5:</strong> Marco legal internacional sobre crímenes cibernéticos</li>
+                                </ul>
+                            </div>
+                            <button class="toggle-btn w-full mt-4 py-2 px-4 rounded-full bg-[#3c78a9] text-white font-semibold hover:bg-[#2e6293] transition-colors">
+                                Ver más
+                            </button>
+                        </div>
+
+                        <!-- Nuevo Curso: Análisis Forense Digital -->
+                        <div class="bg-[#1E4E77] rounded-2xl p-6 shadow-sm-card">
+                            <h3 class="text-xl font-semibold text-white mb-2 flex items-center">
+                                <i class="fas fa-database text-[#4A90E2] mr-3"></i> Análisis Forense Digital
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed mb-4">
+                                Este programa te capacita en la extracción y análisis de datos de dispositivos electrónicos. Te especializarás en recuperar información borrada, investigar historiales de navegación y reconstruir eventos digitales.
+                            </p>
+                            <div id="details-analisis-forense" class="hidden">
+                                <h4 class="font-medium text-white mb-2 mt-4">Contenido del Programa:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                                    <li><strong>Módulo 1:</strong> Principios del análisis forense digital</li>
+                                    <li><strong>Módulo 2:</strong> Herramientas de software y hardware</li>
+                                    <li><strong>Módulo 3:</strong> Examen de discos duros y medios extraíbles</li>
+                                    <li><strong>Módulo 4:</strong> Recuperación de datos y archivos ocultos</li>
+                                    <li><strong>Módulo 5:</strong> Informes periciales de evidencia digital</li>
+                                </ul>
+                            </div>
+                            <button class="toggle-btn w-full mt-4 py-2 px-4 rounded-full bg-[#3c78a9] text-white font-semibold hover:bg-[#2e6293] transition-colors">
+                                Ver más
+                            </button>
+                        </div>
+
+                        <!-- Nuevo Curso: Psicología Criminal -->
+                        <div class="bg-[#1E4E77] rounded-2xl p-6 shadow-sm-card">
+                            <h3 class="text-xl font-semibold text-white mb-2 flex items-center">
+                                <i class="fas fa-brain text-[#4A90E2] mr-3"></i> Psicología Criminal
+                            </h3>
+                            <p class="text-gray-200 leading-relaxed mb-4">
+                                Este curso te introduce en el estudio del comportamiento delictivo. Aprenderás a crear perfiles criminales, entender las motivaciones detrás de los crímenes y aplicar técnicas psicológicas en la investigación.
+                            </p>
+                            <div id="details-psicologia-criminal" class="hidden">
+                                <h4 class="font-medium text-white mb-2 mt-4">Contenido del Programa:</h4>
+                                <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                                    <li><strong>Módulo 1:</strong> Conceptos básicos de psicología criminal</li>
+                                    <li><strong>Módulo 2:</strong> Tipos de perfiles criminales</li>
+                                    <li><strong>Módulo 3:</strong> Análisis de la escena del crimen desde la perspectiva psicológica</li>
+                                    <li><strong>Módulo 4:</strong> Entrevista y técnicas de interrogatorio</li>
+                                    <li><strong>Módulo 5:</strong> Psicopatología y crimen</li>
+                                </ul>
+                            </div>
+                            <button class="toggle-btn w-full mt-4 py-2 px-4 rounded-full bg-[#3c78a9] text-white font-semibold hover:bg-[#2e6293] transition-colors">
+                                Ver más
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección de contacto -->
+            <section id="content-contacto" class="info-content hidden">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-6 text-center">Información de Contacto</h2>
+                    <p class="text-gray-200 mb-6 leading-relaxed text-center">Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos:</p>
+                    <div class="bg-[#1E4E77] p-8 rounded-2xl shadow-lg max-w-lg mx-auto">
+                        <ul class="list-none space-y-4 text-gray-200">
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-2xl text-[#4A90E2] mr-4"></i>
+                                <div>
+                                    <strong class="block">Correo Electrónico:</strong>
+                                    <span>info@eic-comayagua.edu.hn</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt text-2xl text-[#4A90E2] mr-4"></i>
+                                <div>
+                                    <strong class="block">Teléfono:</strong>
+                                    <span>+504 2783-0000</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-2xl text-[#4A90E2] mr-4"></i>
+                                <div>
+                                    <strong class="block">Dirección:</strong>
+                                    <span>Comayagua, Honduras</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de información general -->
+            <section id="content-info" class="info-content hidden">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-6 text-center">Acerca de la Escuela</h2>
+                    <div class="space-y-6 text-gray-200 leading-relaxed text-lg">
+                        <p class="text-justify">
+                            La Escuela de Investigación Criminal de Comayagua es una institución educativa dedicada a la formación de profesionales en el campo de la investigación criminal y la seguridad pública. Nuestra misión es dotar a nuestros estudiantes de los conocimientos, habilidades y valores necesarios para enfrentar los desafíos del sistema de justicia moderno.
+                        </p>
+                        <hr class="border-gray-600">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-2">Misión</h3>
+                            <p class="text-justify">
+                                Formar investigadores criminales competentes y éticos, capaces de aplicar metodologías científicas y técnicas avanzadas en la resolución de crímenes, contribuyendo así a la seguridad y justicia en el país.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-2">Visión</h3>
+                            <p class="text-justify">
+                                Ser la institución líder en la formación de investigadores criminales en la región, reconocida por la calidad de sus egresados, su innovación en la investigación y su compromiso con los más altos estándares de profesionalismo y ética.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-2">Objetivos</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4">
+                                <li>Capacitar a los estudiantes en técnicas de investigación criminal y forense de vanguardia.</li>
+                                <li>Desarrollar habilidades analíticas y de resolución de problemas.</li>
+                                <li>Fomentar un compromiso con la ética y el respeto a los derechos humanos.</li>
+                                <li>Promover la investigación y la innovación en el campo de la criminalística.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección de mapa -->
+            <section id="content-mapa" class="info-content hidden">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-white mb-6">Ubicación y Cómo Llegar</h2>
+                    <p class="text-gray-200 mb-6 leading-relaxed">
+                        Haz clic en el botón para ver nuestra ubicación exacta en Google Maps.
+                    </p>
+                    <div class="text-center mb-8">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Escuela+de+Investigación+Criminal,+Comayagua,+Honduras" target="_blank" class="inline-flex items-center justify-center bg-[#4A90E2] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#3c78a9] transition-colors shadow-lg">
+                            <i class="fas fa-map-marked-alt mr-2"></i> Ver Ubicación en el Mapa
+                        </a>
+                    </div>
+                    <div class="bg-[#1E4E77] p-6 rounded-2xl max-w-md mx-auto">
+                        <h3 class="text-xl font-semibold text-white mb-2">Dirección</h3>
+                        <p class="text-gray-200 mb-4">
+                            Barrio El Centro, Comayagua, Honduras
+                        </p>
+                        <h3 class="text-xl font-semibold text-white mb-2">Puntos de Referencia</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-300 ml-4 text-left">
+                            <li>A 5 minutos a pie de la Catedral de Comayagua.</li>
+                            <li>Cerca del Parque Central.</li>
+                            <li>Fácil acceso en transporte público y taxi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="bg-[#1E4E77] p-8 text-center mt-auto">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4 md:space-y-0 md:space-x-8 text-gray-300">
+                    <a href="#content-inicio" class="hover:text-white transition-colors">Inicio</a>
+                    <a href="#content-cursos" class="hover:text-white transition-colors">Cursos</a>
+                    <a href="#content-contacto" class="hover:text-white transition-colors">Contacto</a>
+                    <a href="#content-info" class="hover:text-white transition-colors">Info</a>
+                </div>
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="#" class="text-2xl text-[#4A90E2] hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-2xl text-[#4A90E2] hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-2xl text-[#4A90E2] hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="text-gray-400 text-sm">&copy; 2024 Escuela de Investigación Criminal. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinksTop = document.querySelectorAll('.nav-item-top');
+            const infoContents = document.querySelectorAll('section.info-content');
+            const toggleButtons = document.querySelectorAll('.toggle-btn');
+            const menuBtn = document.getElementById('menu-btn');
+            const navLinks = document.getElementById('nav-links');
+
+            const hideAllContent = () => {
+                infoContents.forEach(content => content.classList.add('hidden'));
+            };
+
+            const showPage = (contentId) => {
+                hideAllContent();
+                document.getElementById(contentId).classList.remove('hidden');
+                // Scroll to the section
+                document.getElementById(contentId).scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // Toggle mobile menu
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('flex');
+            });
+            
+            // Configurar los eventos para los botones de la barra de navegación superior
+            navLinksTop.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const contentId = link.getAttribute('data-target');
+                    showPage(contentId);
+                    // Hide mobile menu after click
+                    if (!navLinks.classList.contains('hidden')) {
+                         navLinks.classList.add('hidden');
+                         navLinks.classList.remove('flex');
+                    }
+                });
+            });
+
+            // Configurar los eventos para los botones de las tarjetas de cursos
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const detailsDiv = button.previousElementSibling;
+                    const isHidden = detailsDiv.classList.contains('hidden');
+                    
+                    detailsDiv.classList.toggle('hidden');
+                    button.textContent = isHidden ? 'Ver menos' : 'Ver más';
+                });
+            });
+
+            // Handle anchor links for sections, including the hero button
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Show the initial content
+            const initialContentId = window.location.hash ? window.location.hash.substring(1) : 'content-inicio';
+            const initialContentElement = document.getElementById(initialContentId);
+            if (initialContentElement) {
+                hideAllContent();
+                initialContentElement.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
